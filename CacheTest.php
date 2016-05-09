@@ -22,13 +22,17 @@ class CacheTest extends PHPUnit_Framework_TestCase
     function test_put_overwrite()
     {
         $cache =new Cache();
-	$key = 'apple';
-	$val = 'バナナ';
-        $key2 = 'orange';
-        $val2 = 'オレンジ';
+        $key = 'apple';
+        $val = 'リンゴ';
+        $key2 = 'apple';
+	$val2 = 'バナナ';
+        $key3 = 'orange';
+        $val3 = 'オレンジ';
 	$cache->put($val, $key);
         $cache->put($val2, $key2);
+        $cache->put($val3, $val3);
         $this->assertCount(2,$cache->put_data);
-    } 
+    }
+ 
 }
 

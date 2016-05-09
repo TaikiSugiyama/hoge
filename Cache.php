@@ -15,5 +15,11 @@ class Cache
         }else{
             return null;
         }
-    } 
+    }
+    
+    function remove()
+    {
+    
+    }
+ 
 }
