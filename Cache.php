@@ -17,12 +17,12 @@ class Cache
         }
     }
     
-    function remove($del_name)
+    function remove($key)
     {
-        if(array_key_exists($del_name, $this->put_data)){
-            unset($this->put_data($del_name));
+        if(isset($this->put_data[$key])){
+            unset($this->put_data($key));
             $this->put_data = array_values($this->put_data);
+            return true;
         }
-    }
- 
+    } 
 }
