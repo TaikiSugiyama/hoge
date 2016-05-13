@@ -6,11 +6,11 @@ class CacheTest extends PHPUnit_Framework_TestCase
     function test_CacheTest()
     {
         $cache = new Cache();
-        $key = 'apple';
-        $val = 'リンゴ';
-        $cache->put($val, $key);
+        $key = 'key';
+        $data = 'for key';
+        $cache->put($data, $key);
         $get_return = $cache->get($key);
-        $bool = $val === $get_return;
+        $bool = $data === $get_return;
         $this->assertTrue($bool);
     }
     function test_when_empty(){
@@ -37,9 +37,7 @@ class CacheTest extends PHPUnit_Framework_TestCase
     function test_remove() 
     {
         $cache = new Cache();
-        $key = 'key1';
-        $data = 'for key1';
-        $cache->put($key, $data);
+        $cache->put('key, $data');
 	var_dump($cache);
         $this->assertTrue($cache->remove($data));
         $this->assertNull($cache->get($data));
